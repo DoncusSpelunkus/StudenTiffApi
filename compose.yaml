@@ -1,0 +1,10 @@
+services:
+  tiff-api:
+    image: eclipse-temurin:21-jdk-alpine
+    working_dir: /src
+    restart: unless-stopped
+    volumes:
+      - ./:/src
+    ports:
+      - "8080:8080"
+    command: ./mvnw spring-boot:run
